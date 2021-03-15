@@ -46,16 +46,16 @@ RSpec.describe User, type: :model do
        expect(duplicate_user).to_not be_valid
      end
 
-    #  it "password should be present" do
-    #    user.password = nil
+      it "password should be present" do
+        user.password = nil
     
-    #    expect(user).to_not be_valid
-    #  end
+        expect(user).to_not be_valid
+      end
 
-    #  it "password should be have a minimum length" do
-    #    user.password = "a" * 5
-    #    expect(user).to_not be_valid
-    #  end
+      it "password should be have a minimum length" do
+        user.password = "a" * 5
+        expect(user).to_not be_valid
+      end
   
 
  
