@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  let(:user) { User.create!(name: 'wilmer', email: 'wamg@example.com') }
+  let(:user) { User.create!(name: 'wilmer', email: 'wamg@example.com',
+                            password: "foobar", password_confirmation: "foobar") }
   let(:wrong_user) { User.create!(name: ' ', email: ' ') }
 
      it 'user can be created' do     
@@ -45,15 +46,16 @@ RSpec.describe User, type: :model do
        expect(duplicate_user).to_not be_valid
      end
 
-    # it "password should be present" do
-    #   user.password = " "
-    #   expect(user).to_not be_valid
-    # end
+     it "password should be present" do
+       user.password = nil
+    
+       expect(user).to_not be_valid
+     end
 
-    # it "password should be have a minimum length" do
-    #   user.password = "a" * 5
-    #   expect(user).to_not be_valid
-    # end
+     it "password should be have a minimum length" do
+       user.password = "a" * 5
+       expect(user).to_not be_valid
+     end
   
 
  
