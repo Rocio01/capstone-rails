@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CapstoneRails</title>
+    <title><%= full_title(yield(:title)) %> </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,22 @@
   </head>
 
   <body>
-    <%= yield %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+     <div class="container">
+        <%= link_to "Time-trac", root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+              <li> <%= link_to "Home", root_path %> </li> 
+              <li> <%= link_to "Log in", "#" %> </li>
+          </ul>
+        </nav>
+     </div>
+  </header>
+
+
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
