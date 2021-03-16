@@ -37,6 +37,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
+              <li> <%= link_to "Settings", edit_user_path(current_user) %> </li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: :delete %>
@@ -58,7 +59,7 @@
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
+       <%= debug(params) if Rails.env.development? %> 
     </div>
   </body>
 </html>
