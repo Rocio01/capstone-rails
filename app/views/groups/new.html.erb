@@ -10,11 +10,29 @@
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
+      
 
-      <%= f.label :icon %>
-      <%= f.select(:icon, options_for_select([])) %>
+      <%= f.label :icon, class:"text-dark pl-3" %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <div class="input-group mb-3">         
+          
+          <span class="radio-b"><%= radio_button("group", "icon", "http://www.clker.com/cliparts/B/9/N/q/L/s/exercise-with-dumbbells-symbol-hi.png") %></span>
+          <img class="icon" src="http://www.clker.com/cliparts/B/9/N/q/L/s/exercise-with-dumbbells-symbol-hi.png" alt="icon">
+
+          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_538351.png") %></span>
+          <img class="icon" src="https://cdn.onlinewebfonts.com/svg/img_538351.png" alt="icon">
+
+          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_15585.png") %></span>
+          <img class="icon" src="https://cdn.onlinewebfonts.com/svg/img_15585.png" alt="icon">
+
+          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_74305.png") %></span>
+          <img class="icon" src="https://cdn.onlinewebfonts.com/svg/img_74305.png" alt="icon">
+         
+        </div>  
+        <br/>                                        
+
+      <%= f.submit "Create Group", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
+
