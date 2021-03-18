@@ -1,0 +1,17 @@
+<% provide(:title, "Groups") %>
+
+<h1> Total  of groups: <%= @groups.count %> </h1>
+
+<ul class="groups">
+    <% @groups.each do |group|%>
+    <li>
+        <span class="content"> 
+            <%# <%= icon(group.icon, class: "fa-lg") %>         
+            <%= link_to "#{group.name}", group %></td>
+        <span>
+
+         <span class="timestamp">
+            Created <%= time_ago_in_words(group.created_at) %> ago.
+        </span>
+    <% end %>
+</ul>
