@@ -12,6 +12,13 @@ class GroupsController < ApplicationController
     
 
     def create
+      @group = current_user.groups.build(group_params)
+      if @group.save
+        flash[:success] = "Group created!"
+        redirect_to root_url
+      else 
+        render :new
+      end
 
     end
 
@@ -21,6 +28,10 @@ class GroupsController < ApplicationController
     end
 
   private
+
+     def group_params
+        params.require(:group).permit(:name, :icon)
+     end
   
 
 
