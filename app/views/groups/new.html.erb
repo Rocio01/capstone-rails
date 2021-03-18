@@ -1,0 +1,20 @@
+<% provide(:title, 'New Group') %>
+<h1>New Group</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @group, local: true) do |f| %>
+    <% if @group.errors.any? %>
+      <%= render 'shared/error_messages' %>
+    <% end %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :icon %>
+      <%= f.select(:icon, options_for_select([])) %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
