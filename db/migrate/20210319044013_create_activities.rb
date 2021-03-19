@@ -9,6 +9,5 @@ class CreateActivities < ActiveRecord::Migration[6.1]
       t.timestamps
     end
     add_index :activities, [:user_id, :created_at]
-    add_index :activities, [:group_id, :created_at]
   end
 end
