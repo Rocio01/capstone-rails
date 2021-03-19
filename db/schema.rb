@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_205134) do
+ActiveRecord::Schema.define(version: 2021_03_19_172417) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.integer "activity_time"
+    t.integer "user_id"
+    t.integer "group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_activities_on_group_id"
+    t.index ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -31,5 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_205134) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "activities", "groups"
+  add_foreign_key "activities", "users"
   add_foreign_key "groups", "users"
 end
