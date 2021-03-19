@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
     
     before_action :logged_in_user, only: [:index,  :create, :destroy]
- 
+    before_action :correct_group,   only: :destroy
+
     def new
        @group = Group.new
     end
@@ -24,7 +25,9 @@ class GroupsController < ApplicationController
 
 
     def destroy
-
+      @group.destroy
+      flash[:success] = "Micropost deleted"
+      redirect_to groups_url
     end
 
     def show
@@ -38,6 +41,12 @@ class GroupsController < ApplicationController
      def group_params
         params.require(:group).permit(:name, :icon)
      end
+
+     def correct_group
+       @group = current_user.groups.find_by(id: params[:id]) 
+     end
+
+
   
 
 

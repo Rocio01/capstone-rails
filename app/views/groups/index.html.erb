@@ -6,12 +6,16 @@
     <% @groups.each do |group|%>
     <li>
         <span class="content"> 
-            <%# <%= icon(group.icon, class: "fa-lg") %>         
+                    
             <%= link_to "#{group.name}", group %></td>
         <span>
 
          <span class="timestamp">
-            Created <%= time_ago_in_words(group.created_at) %> ago.
+            Created <%= time_ago_in_words(group.created_at) %> ago.            
+
+                <%= link_to "delete", group, method: :delete, 
+                                            data: { confirm: "Are you sure?"} %>         
+        
         </span>
     <% end %>
 </ul>

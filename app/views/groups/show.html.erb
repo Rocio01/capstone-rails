@@ -13,6 +13,8 @@
           <div class="flex-column">
             <p> Name:  <%= @group.name %> </p>
             <p class="ml-4"><small> Created at: <%= @group.created_at.strftime("%d-%b-%Y") %></small></p>
+            <%= link_to "delete", @group, method: :delete, 
+                                          data: { confirm: "Are you sure?"} %>                  
           </div>
 
         
