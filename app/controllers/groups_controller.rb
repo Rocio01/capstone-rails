@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
     
-    before_action :logged_in_user, only: [:index,  :create, :destroy]
+    before_action :logged_in_user, only: [:index,  :create, :destroy, :show, :new]
     before_action :correct_group,   only: :destroy
 
     def new
