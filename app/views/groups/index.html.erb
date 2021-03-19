@@ -6,7 +6,8 @@
     <% @groups.each do |group|%>
     <li>
         <span class="content"> 
-                    
+
+             <img src="<%= group.icon%>" class=" icon" alt="icon" >        
             <%= link_to "#{group.name}", group %></td>
         <span>
 
@@ -18,4 +19,6 @@
         
         </span>
     <% end %>
+    </li>
+    <li><%= link_to " New Group", "groups/new" %></li>
 </ul>
