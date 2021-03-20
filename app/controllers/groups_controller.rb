@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     end
     
     def index
-        @groups = Group.all
+      @groups = Group.order(name: :asc).all
     end
     
 
@@ -32,6 +32,8 @@ class GroupsController < ApplicationController
 
     def show
      @group = Group.find(params[:id])
+     
+   
     end
 
   private

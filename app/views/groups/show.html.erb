@@ -1,24 +1,38 @@
 <%  provide(:title, @group.name ) %> 
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-sm-8 col-lg-5">
-      <h4 class="text-muted">Group</h4> 
-      <ul class="list-group">
-        
-          <div >
-            <img src="<%= @group.icon%>" class=" icon" alt="icon" > 
-          </div>         
-          <div class="flex-column">
-            <p> Name:  <%= @group.name %> </p>
-            <p class="ml-4"><small> Created at: <%= @group.created_at.strftime("%d-%b-%Y") %></small></p>
-            <%= link_to "delete", @group, method: :delete, 
-                                          data: { confirm: "Are you sure?"} %>                  
-          </div>
-
-        
-      </ul>
-    </div>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <span>
+        <img src="<%= @group.icon%>" class=" icon" alt="icon" >          
+       <h3> <%= @group.name %> </h3>
+       <p> Created at: <%= @group.created_at.strftime("%d-%b-%Y") %> </p>
+        <%= link_to "delete", @group, method: :delete, 
+                                      data: { confirm: "Are you sure?"} %>        
+      </span>
+    </section>
+ </aside>   
+      
+   <div class="col-md-8">
+   
+     <% if @group.activities.any? %>
+ 
+       <h3> The Group contains <%= (@group.activities.count) %> activities.</h3>
+        <ol class="activities">
+         
+          <% @group.activities.each do |activity| %>
+          <li>         
+            <p class="name"><%= activity.name %> </p>
+            <p class="user"> Author: <%= link_to activity.user.name, activity.user %> </p>
+            <p class="timestamp">
+                Created at: <%= activity.created_at.strftime("%d-%b-%Y") %> 
+            </p>
+          </li>
+          <% end %>
+        </ol>
+     <% end %>
   </div>
+          
+
+
 </div>
