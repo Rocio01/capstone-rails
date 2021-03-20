@@ -6,16 +6,20 @@
           <% @group_activities.each do |activity| %> 
               <div class="card" style="max-width: 540px;">
                   <div class="row g-0">
+                     
                      <div class="col-md-4">
                          <img src="<%= activity.group.icon%>" class=" icon" alt="icon" > 
                         <%= link_to activity.group.name, activity.group %>
                      </div>
+
                          <div class="col-md-8">
                           <div class="card-body">                 
                               <p class="card-text"><%= activity.name %></p>                             
                               <p class="card-text"> You spent in this activity <%= activity.activity_time %> <%= "Hour".pluralize(activity.activity_time) %>. </p>
+                              <p class="card-text"> Created at: <%= activity.created_at.strftime("%d-%b-%Y") %> </p>    
                            </div>
                         </div>
+                        
                   </div>
               </div>
           <% end %>
