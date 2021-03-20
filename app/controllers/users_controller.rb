@@ -36,8 +36,18 @@ def update
 end
 
 def index
-  @users = User.all
+  @users = User.all 
 end 
+
+def external_activities
+  user = User.find_by(id: current_user.id)
+  @external_activities = user.activities.where(group_id: nil)
+end
+
+def group_activities
+  user = User.find_by(id: current_user.id)
+  @group_activities =  user.activities.where.not(group_id: nil)
+end
 
 
 private
