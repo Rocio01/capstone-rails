@@ -3,17 +3,17 @@
        <h3> You have  <%= @group_activities.count%> External <%= "Activity".pluralize(@group_activities.count) %>. </h3>
         
          
-          <% @group_activities.each do |activity| %>
+          <% @group_activities.each do |activity| %> 
               <div class="card" style="max-width: 540px;">
                   <div class="row g-0">
                      <div class="col-md-4">
                          <img src="<%= activity.group.icon%>" class=" icon" alt="icon" > 
-
+                        <%= link_to activity.group.name, activity.group %>
                      </div>
                          <div class="col-md-8">
                           <div class="card-body">                 
                               <p class="card-text"><%= activity.name %></p>                             
-                              <p class="card-text"> You spent in this activity <%= activity.activity_time %> <%= "Hour".pluralize(@group_activities.count) %>. </p>
+                              <p class="card-text"> You spent in this activity <%= activity.activity_time %> <%= "Hour".pluralize(activity.activity_time) %>. </p>
                            </div>
                         </div>
                   </div>
