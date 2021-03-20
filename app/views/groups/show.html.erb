@@ -13,11 +13,11 @@
     </section>
  </aside>   
       
-   <div class="col-md-8">
+   <div class="col-md-8"> 
    
-     <% if @group.activities.any? %>
- 
-       <h3> The Group contains <%= (@group.activities.count) %> activities.</h3>
+     <% if @group.activities.any? %>      
+
+       <h3>  The group contains <%= @group.activities.count%> <%= "Activity".pluralize(@group.activities.count) %> . </h3>
         <ol class="activities">
          
           <% @group.activities.each do |activity| %>
