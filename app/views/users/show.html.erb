@@ -1,15 +1,17 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        
-      </h1>
-    </section>
-  </aside>
-</div>
-<div>
-  <%= link_to "Groups", groups_path %>
+
+
+<div class="card" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= gravatar_for @user %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+       
+        <p class="card-text"><%= @user.name %></p>
+        <p class="card-text"><%= link_to "Groups", groups_path %></p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,11 +1,24 @@
 <% provide(:title, "Users") %>
 <h1>Users</h1>
 
-<ul class="users">
-    <% @users.each do |user|%>
-    <li>
-        <%= gravatar_for user, size: 50 %>
-        <%= link_to user.name, user %>
-    </li>
-    <% end %>
-</ul>
+
+
+<% @users.each do |user|%>
+
+<div class="card" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= gravatar_for user, size: 80 %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+       
+        <p class="card-text"><%= link_to user.name, user %>
+    </li></p>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+  <% end %>
