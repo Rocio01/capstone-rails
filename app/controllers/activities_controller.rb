@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity.destroy
     flash[:success] = 'Activity deleted'
-    redirect_to root_path
+    redirect_to current_user
   end
 
   private

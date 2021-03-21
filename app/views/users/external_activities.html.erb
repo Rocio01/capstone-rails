@@ -19,7 +19,8 @@
                               <p class="card-text"><%= activity.name %></p>
                               <p class="card-text"> You spent in this activity <%= activity.activity_time %>
                                                                              <%= "Hour".pluralize(activity.activity_time) %>. </p>
- 
+                             <%= link_to "delete", activity, method: :delete, 
+                                      data: { confirm: "Are you sure?"} %>           
                            </div>
                         </div>
                   </div>

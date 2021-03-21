@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get    "/activitiesg", to:  "users#group_activities"
   resources :users
   resources :groups
-  resource :activities
+  resources :activities
+            
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
