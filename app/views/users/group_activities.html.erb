@@ -1,6 +1,6 @@
-<%= @group_activities.count%>
 
-       <h3> You have  <%= @group_activities.count%> External <%= "Activity".pluralize(@group_activities.count) %>. </h3>
+<h3> You have a total tracking of <%= @group_activities_total %>   <%= "hour".pluralize(@group_activities_total) %> in activities </h3>
+       <h3> You have  <%= @group_activities.count%>  <%= "Activity".pluralize(@group_activities.count) %>. </h3>
         
          
           <% @group_activities.each do |activity| %> 

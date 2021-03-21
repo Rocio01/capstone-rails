@@ -1,13 +1,12 @@
-<%= @external_activities.count%>
 
 
 
    
       
 
-       <h3> You have  <%= @external_activities.count%> External <%= "Activity".pluralize(@external_activities.count) %>. </h3>
-        
-         
+       
+      <h3> You have a total tracking of <%= @external_total %>   <%= "hour".pluralize(@external_total) %> in External activities </h3>
+         <h3>  <%= @external_activities.count%> External <%= "activity".pluralize(@external_activities.count) %>. </h3>
           <% @external_activities.each do |activity| %>
               <div class="card" style="max-width: 540px;">
                   <div class="row g-0">
@@ -18,7 +17,9 @@
                          <div class="col-md-8">
                           <div class="card-body">                 
                               <p class="card-text"><%= activity.name %></p>
-                              <p class="card-text"> You spent in this activity <%= activity.activity_time %> <%= "Hour".pluralize(@external_activities.count) %>. </p>
+                              <p class="card-text"> You spent in this activity <%= activity.activity_time %>
+                                                                             <%= "Hour".pluralize(activity.activity_time) %>. </p>
+ 
                            </div>
                         </div>
                   </div>

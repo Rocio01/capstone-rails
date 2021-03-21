@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :external_activities, :group_activities ]
+  before_action :logged_in_user, only: %i[index edit update external_activities group_activities]
 
   def show
     @user = User.find(params[:id])
@@ -14,47 +14,46 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in @user
-      flash[:success] = "Welcome to Time trac"
+      flash[:success] = 'Welcome to Time trac'
       redirect_to @user
-    else 
-      render "new"
+    else
+      render 'new'
     end
-
   end
 
-def edit
-  @user = User.find(params[:id])
-end
+  def edit
+    @user = User.find(params[:id])
+  end
 
-def update
-  @user = User.find(params[:id])
-  if @user.update(user_params)
-     flash[:success] = "Profile updated"
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = 'Profile updated'
       redirect_to @user
-  else
-     render "edit"
+    else
+      render 'edit'
+    end
   end
-end
 
-def index
-  @users = User.all 
-end 
+  def index
+    @users = User.all
+  end
 
-def external_activities
-  user = User.find_by(id: current_user.id)
-  @external_activities = user.activities.where(group_id: nil)
-end
+  def external_activities
+    user = User.find_by(id: current_user.id)
+    @external_activities = user.activities.where(group_id: nil)
+    @external_total = @external_activities.sum(:activity_time)
+  end
 
-def group_activities
-  user = User.find_by(id: current_user.id)
-  @group_activities =  user.activities.where.not(group_id: nil)
-end
+  def group_activities
+    user = User.find_by(id: current_user.id)
+    @group_activities = user.activities.where.not(group_id: nil)
+    @group_activities_total = @group_activities.sum(:activity_time)
+  end
 
+  private
 
-private
   def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
-
 end
