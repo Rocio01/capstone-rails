@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/login",              to:  "sessions#create"  
   delete "/logout",           to:  "sessions#destroy"
   get   "/external",          to:  "users#external_activities"
-  get    "/group-activities", to:  "users#group_activities"
+  get    "/activitiesg", to:  "users#group_activities"
   resources :users
   resources :groups
   resource :activities

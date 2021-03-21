@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
 
     def destroy
       @group.destroy
-      flash[:success] = "Micropost deleted"
+      flash[:success] = "Group deleted"
       redirect_to groups_url
     end
 
