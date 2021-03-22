@@ -202,6 +202,22 @@ aside {
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
   background-color: white;
-  padding: 1%;
+  padding: 3%;
   
 }
+
+.user-show {
+  background-color:  #3378c2;
+  border-radius: 1%;  
+
+  h3, a {
+    color: #bbb;
+
+  }
+
+  p {
+    border-bottom: 1px solid $gray-lighter;
+    padding-bottom: 1%;
+  }
+}
+
