@@ -5,13 +5,17 @@
   <body>
     
     <div class="center jumbotron">
-        <h1>Welcome to Time trac </h1>
+        <h1>Time Trac</h1>
 
-        <h2>
-          This is an app for trac your spend of time 
-        </h2>
-
+        <h4 >
+         This is an application where you can group your activities and track
+         how many hours you spend on them, you can also create activities without grouping them. 
+        </h4>
+         <% unless logged_in?%>
         <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-success" %>
+
+       <h5> <%= link_to "Log in", login_path %> </h5>
+        <% end %>
     </div>
     
   </body>

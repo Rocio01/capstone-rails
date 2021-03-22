@@ -1,31 +1,40 @@
-
-
-
-   
-      
-
-       
-      <h3> You have a total tracking of <%= @external_total %>   <%= "hour".pluralize(@external_total) %> in External activities </h3>
-         <h3>  <%= @external_activities.count%> External <%= "activity".pluralize(@external_activities.count) %>. </h3>
-          <% @external_activities.each do |activity| %>
-              <div class="card" style="max-width: 540px;">
-                  <div class="row g-0">
-                     <div class="col-md-4">
-                        <img src="https://cdn.onlinewebfonts.com/svg/img_132703.png" class=" icon" alt="icon" >
+<% provide(:title, "External Activities") %>
+<div class="card" style="max-width: 540px;">
+	<div class="row g-0">
+		<div class="col-md-4">
+			<h2 class="card-text"> TOTAL: </h2>
+		</div>
+		<div class="col-md-4">
+			<h2 class="card-text"><%= @external_total %><%= "hour".pluralize(@external_total) %>.</h2>
+        </div>
+        <div class="col-md-4"> 
+             <h2 class="card-text activity"> <%= link_to " New Activity", "activities/new" %> </h2> 
+        </div>
+	
+		</div>
+	</div>
+</div>
+<% @external_activities.each do |activity| %>
+    <div class="card" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://cdn.onlinewebfonts.com/svg/img_132703.png" class=" icon" alt="icon" >
+            </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text"><%= activity.name %>
+                        </p>
+                        <small class="card-text"> Created at: <%= activity.created_at.strftime("%d-%b-%Y") %></small>
+                        <%= link_to "delete", activity, method: :delete, data: { confirm: "Are you sure?"} %>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text"><%= activity.activity_time %><%= "Hour".pluralize(activity.activity_time) %>. </p>
+                            
                         
-                     </div>
-                         <div class="col-md-8">
-                          <div class="card-body">                 
-                              <p class="card-text"><%= activity.name %></p>
-                              <p class="card-text"> You spent in this activity <%= activity.activity_time %>
-                                                                             <%= "Hour".pluralize(activity.activity_time) %>. </p>
-                             <%= link_to "delete", activity, method: :delete, 
-                                      data: { confirm: "Are you sure?"} %>           
-                           </div>
-                        </div>
-                  </div>
-              </div>
-          <% end %>
-     
-    
-  
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>

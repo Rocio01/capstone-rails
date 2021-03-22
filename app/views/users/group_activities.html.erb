@@ -1,25 +1,41 @@
+<% provide(:title, "Activities") %>
+<div class="card" style="max-width: 540px;">
+	<div class="row g-0"> 
+		<div class="col-md-4">
+			<h2 class="card-text"> TOTAL: </h2>
+            
+		</div>
+		<div class="col-md-4">
+			<h2 class="card-text"><%= @group_activities_total %><%= "hour".pluralize(@group_activities_total) %>. </h2>
+            
+		</div>
 
-<h3> You have a total tracking of <%= @group_activities_total %>   <%= "hour".pluralize(@group_activities_total) %> in activities </h3>
-       <h3> You have  <%= @group_activities.count%>  <%= "Activity".pluralize(@group_activities.count) %>. </h3>
-        
-         
-          <% @group_activities.each do |activity| %> 
-              <div class="card" style="max-width: 540px;">
-                  <div class="row g-0">
-                     
-                     <div class="col-md-4">
-                         <img src="<%= activity.group.icon%>" class=" icon" alt="icon" > 
-                        <%= link_to activity.group.name, activity.group %>
-                     </div>
+        <div class="col-md-4"> 
+             <h2 class="card-text activity"> <%= link_to " New Activity", "activities/new" %> </h2> 
+        </div>
+	</div>
+</div>
 
-                         <div class="col-md-8">
-                          <div class="card-body">                 
-                              <p class="card-text"><%= activity.name %></p>                             
-                              <p class="card-text"> You spent in this activity <%= activity.activity_time %> <%= "Hour".pluralize(activity.activity_time) %>. </p>
-                              <p class="card-text"> Created at: <%= activity.created_at.strftime("%d-%b-%Y") %> </p>    
-                           </div>
-                        </div>
+<% @group_activities.each do |activity| %>
+    <div class="card" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="<%= activity.group.icon%>" class=" icon" alt="icon"><%= link_to activity.group.name, activity.group %>
+             </div>
+             <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text"><%= activity.name %>
+                        </p>
+                        <small class="card-text"> Created at: <%= activity.created_at.strftime("%d-%b-%Y") %></small>
+                        <%= link_to "delete", activity, method: :delete, data: { confirm: "Are you sure?"} %>
+                    </div>
+             </div>
+             <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text"><%= activity.activity_time %><%= "Hour".pluralize(activity.activity_time) %>. </p>
                         
-                  </div>
-              </div>
-          <% end %>
+                    </div>
+            </div>
+    </div>
+ </div>
+<% end %>
