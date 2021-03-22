@@ -29,8 +29,8 @@
         <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
             id="bs-example-navbar-collapse-1">
         <li><%= link_to "Home", root_path %></li>
-        
-        <% if logged_in? %>
+          
+          <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Groups", groups_path %></li>
 

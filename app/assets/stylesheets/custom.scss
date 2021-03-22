@@ -1,4 +1,4 @@
-// import 
+// import
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -7,108 +7,137 @@
 // universal
 
 body {
-    padding-top: 60px;
-    background-color: #f5f5f5;
-  }
-  
-  section {
-    overflow: auto;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .center {
-    text-align: center;
-    h1 {
-      margin-bottom: 10px;
-    }
-  }
+  padding-top: 60px;
+  background-color: #f5f5f5;
+}
 
-  // mixins
-  @mixin box_sizing {
-    -moz-box-sizing:    border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing:         border-box;
-  }
+section {
+  overflow: auto;
+}
 
-  //  typography 
+textarea {
+  resize: vertical;
+}
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 1.8em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: $gray-light;
-  }
-  
-  p {
-    font-size: 1.1em;
-    // line-height: 2em;
-  }
-  
-  // header
-  #logo {
-    float: left;
-    margin-right: 10px;
-    font-size: 1.7em;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
-  }
-  .navbar-inverse{
-        background-color:  #3378c2;  
-      }
-  
-//  sidebar 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.5em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+//  forms
+
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+//  sidebar
 
 aside {
   section.user_info {
     margin-top: 20px;
+
     textarea {
       height: 100px;
       margin-bottom: 5px;
     }
   }
+
   section {
     padding: 10px 0;
     margin-top: 20px;
+
     &:first-child {
       border: 0;
       padding-top: 0;
     }
+
     span {
       display: block;
       margin-bottom: 3px;
       line-height: 1;
     }
+
     h1 {
       font-size: 1.4em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
+}
+
+.center {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+// mixins
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//  typography
+
+h2 {
+  font-size: 1.8em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  // line-height: 2em;
+}
+
+// header
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.navbar-inverse {
+  background-color: #3378c2;
 }
 
 .gravatar {
@@ -118,24 +147,11 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
-}    
-
-
-//  forms 
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
 }
 
 #error_explanation {
   color: red;
+
   ul {
     color: red;
     margin: 0 0 30px 0;
@@ -144,16 +160,18 @@ input {
 
 .field_with_errors {
   @extend .has-error;
+
   .form-control {
     color: $state-danger-text;
   }
 }
 
-//  Users index 
+//  Users index
 
 .users {
   list-style: none;
   margin: 0;
+
   li {
     overflow: auto;
     padding: 10px 0;
@@ -161,11 +179,12 @@ input {
   }
 }
 
-// groups 
+// groups
 
 .groups {
   list-style: none;
   padding: 0;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -175,46 +194,39 @@ input {
     display: block;
     margin-left: 60px;
   }
+
   .timestamp {
     color: $gray-light;
     display: block;
     margin-left: 60px;
   }
- 
 }
-
-
 
 .icon {
   width: 65px;
   height: 65px;
-  
 }
-
-
-
-
 
 // bootstrap
 .card {
-  margin: 0 auto; 
-  float: none; 
-  margin-bottom: 10px; 
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
   background-color: white;
   padding: 3%;
+
   p {
-     padding: 4%;
+    padding: 4%;
   }
-  
 }
 
 .user-show {
-  background-color:  #3378c2;
-  border-radius: 1%;  
+  background-color: #3378c2;
+  border-radius: 1%;
 
-  h3, a {
+  h3,
+  a {
     color: #bbb;
-
   }
 
   p {
@@ -222,13 +234,15 @@ input {
     padding-bottom: 1%;
   }
 }
- .jumbotron {
-   margin-top: 5%;
-   background-color: #3378c2;
-   h1, h4, a {
-     color: $gray-lighter;
-     padding-bottom: 1%;
-   }
 
- }
+.jumbotron {
+  margin-top: 5%;
+  background-color: #3378c2;
 
+  h1,
+  h4,
+  a {
+    color: $gray-lighter;
+    padding-bottom: 1%;
+  }
+}

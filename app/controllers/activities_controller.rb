@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :logged_in_user, only: %i[create destroy]
+  before_action :logged_in_user, only: %i[new create destroy]
   before_action :correct_activity, only: :destroy
 
   def new
