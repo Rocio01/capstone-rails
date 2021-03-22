@@ -3,39 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @group, local: true) do |f| %>
-    
-      <%= render 'shared/error_messages', object: f.object %>
-   
-
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-      
-
-      <%= f.label :icon, class:"text-dark pl-3" %>
-
-        <div class="input-group mb-3 ">         
-          
-          <span class="radio-b"><%= radio_button("group", "icon", "https://www.freeiconspng.com/uploads/displaying-19-images-for--workout-icon-png-0.png") %></span>
-          <img class="icon" src="https://www.freeiconspng.com/uploads/displaying-19-images-for--workout-icon-png-0.png" alt="icon">
-
-          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_538351.png") %></span>
-          <img class="icon " src="https://cdn.onlinewebfonts.com/svg/img_538351.png" alt="icon">
-
-          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_15585.png") %></span>
-          <img class="icon" src="https://cdn.onlinewebfonts.com/svg/img_15585.png" alt="icon">
-
-          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_74305.png") %></span>
-          <img class="icon" src="https://cdn.onlinewebfonts.com/svg/img_74305.png" alt="icon">
-
-          <span class="radio-b"><%= radio_button("group", "icon", "https://cdn.onlinewebfonts.com/svg/img_528453.png") %></span>
-          <img class="icon" src="https://cdn.onlinewebfonts.com/svg/img_528453.png" alt="icon">
-         
-        </div>  
-        <br/>                                        
-
-      <%= f.submit "Create Group", class: "btn btn-primary" %>
-    <% end %>
+    <%= render "form" %>
   </div>
 </div>
 

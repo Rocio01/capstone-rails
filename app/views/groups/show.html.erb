@@ -15,23 +15,8 @@
  </aside>   
       
    <div class="col-md-8"> 
-   
-     <% if @group.activities.any? %>      
+    <%= render "list" %>
 
-       <h3>  The group contains <%= @group.activities.count%> <%= "Activity".pluralize(@group.activities.count) %> . </h3>
-        <ol class="activities">
-         
-          <% @group.activities.each do |activity| %>
-          <li>         
-            <p class="name"><%= activity.name %> </p>
-            <p class="user"> Author: <%= link_to activity.user.name, activity.user %> </p>
-            <p class="timestamp">
-                Created at: <%= activity.created_at.strftime("%d-%b-%Y") %> 
-            </p>
-          </li>
-          <% end %>
-        </ol>
-     <% end %>
   </div>
           
 

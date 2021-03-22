@@ -1,0 +1,18 @@
+<% @users.each do |user|%>
+
+<div class="card" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= gravatar_for user, size: 80 %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+       
+        <p class="card-text"><%= link_to user.name, user %></p>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+  <% end %>

@@ -4,6 +4,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+* {
+  font-family: 'Proxima Nova Bold', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
 // mixins
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -41,6 +44,7 @@ h1 {
   margin-bottom: 30px;
   text-align: center;
 }
+
 //  forms
 
 input,
@@ -103,8 +107,6 @@ aside {
   }
 }
 
-
-
 //  typography
 
 h2 {
@@ -114,6 +116,10 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+
+  a {
+    color: #e8e8e8;
+  }
 }
 
 p {
@@ -213,6 +219,7 @@ p {
 .card {
   margin: 0 auto;
   float: none;
+  margin-top: 1%;
   margin-bottom: 10px;
   background-color: white;
   padding: 3%;
