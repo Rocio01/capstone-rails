@@ -39,9 +39,6 @@ RSpec.describe Group, type: :model do
     it 'belongs to user' do
       group = Group.reflect_on_association(:user)
       expect(group.macro).to eq(:belongs_to)
-    
     end
-
   end
-
 end

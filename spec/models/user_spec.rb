@@ -58,7 +58,6 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
-
   describe 'User associations' do
     it 'has many groups' do
       user = User.reflect_on_association(:groups)
@@ -68,6 +67,5 @@ RSpec.describe User, type: :model do
       user = User.reflect_on_association(:activities)
       expect(user.macro).to eq(:has_many)
     end
-
   end
 end
