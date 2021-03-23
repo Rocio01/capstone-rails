@@ -57,4 +57,17 @@ RSpec.describe User, type: :model do
     user.password = 'a' * 5
     expect(user).to_not be_valid
   end
+
+
+  describe 'User associations' do
+    it 'has many groups' do
+      user = User.reflect_on_association(:groups)
+      expect(user.macro).to eq(:has_many)
+    end
+    it 'has many activities' do
+      user = User.reflect_on_association(:activities)
+      expect(user.macro).to eq(:has_many)
+    end
+
+  end
 end
