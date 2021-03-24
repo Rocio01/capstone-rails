@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.order(name: :asc).all
+    @groups = Group.all
   end
 
   def create
