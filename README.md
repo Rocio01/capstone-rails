@@ -72,9 +72,6 @@ Open `http://localhost:3000/` in your browser.
    
 Unit and Integration Test has been implemented using RSpec and Capybara.
 
-### Deployment
-
-Deployed on Heroku through the [link](https://floating-tundra-81688.herokuapp.com/)
 
 ## Author
 

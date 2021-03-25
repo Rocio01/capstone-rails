@@ -6,9 +6,10 @@
       <span>
         <img src="<%= @group.icon%>" class=" icon" alt="icon" >          
        <h3> <%= @group.name %> </h3>
+       <p> Author: <%= @group.user.name %> </p>
        <p> Created at: <%= @group.created_at.strftime("%d-%b-%Y") %> </p>
-        <%= link_to "delete", @group, method: :delete, 
-                                      data: { confirm: "Are you sure?"} %>        
+
+       <%= delete_link(@group) %>
       </span>
       <%= link_to " New Group", "new" %>
     </section>
