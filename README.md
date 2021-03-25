@@ -1,6 +1,16 @@
-# Tinme Trac app with Ruby on Rails
+# Time Trac app with Ruby on Rails
 
 This is an application where you can group your activities and track how many hours you spend on them, you can also create activities without grouping them.
+
+## Desktop Screenshot
+
+![screenshot Home-page](app/assets/images/signup.PNG)
+![screenshot Groups-page](app/assets/images/groups.PNG)
+
+## Small screen Screenshot
+
+![NewGroup-page](app/assets/images/new_group.PNG)
+![screenshot Signup-page](app/assets/images/signup_small.PNG)
 
 ## Built With
 
@@ -27,6 +37,12 @@ Development sqlite3: '~> 1.4'
 Production Postgres
 
 ### Setup
+
+Clone the repository
+
+```
+git clone https://github.com/Rocio01/capstone-rails.git
+```
 
 Instal gems with:
 

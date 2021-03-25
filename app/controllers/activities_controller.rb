@@ -6,6 +6,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def show
+    
+  end
+
   def create
     @activity = current_user.activities.build(activity_params)
     if @activity.save
