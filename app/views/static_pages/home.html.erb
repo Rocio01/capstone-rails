@@ -11,11 +11,8 @@
          This is an application where you can group your activities and track
          how many hours you spend on them, you can also create activities without grouping them. 
         </h4>
-         <% unless logged_in?%>
-        <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-success" %>
-
-       <h5> <%= link_to "Log in", login_path %> </h5>
-        <% end %>
+          <%= signup_btn %>
+          <%= login_link %>
     </div>
     
   </body>
