@@ -110,8 +110,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
--Microverse
--GitHub
+- Microverse
+- GitHub
+- [ Gregoire Vella](https://www.behance.net/gregoirevella) for the design guide.
 
 
 
