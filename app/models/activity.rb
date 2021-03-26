@@ -1,4 +1,4 @@
-class Activity < ApplicationRecord
+class Activity < ApplicationRecord 
   belongs_to :user
   belongs_to :group, optional: true
   default_scope -> { order(created_at: :desc).includes(:user).limit(20) }
