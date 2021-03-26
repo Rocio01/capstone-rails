@@ -1,0 +1,27 @@
+<%  provide(:title, @activity.name ) %> 
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <span>       
+       <h3> <%= @activity.name %> </h3>
+       <p> Author: <%= @activity.user.name %> </p>
+       <p>Time: <%= @activity.activity_time %><%= "Hour".pluralize(@activity.activity_time) %>. </p>       
+       <p> Created at: <%= @activity.created_at.strftime("%d-%b-%Y") %> </p>
+
+                        
+                    
+       <%= delete_link(@activity) %>
+      </span>
+      <%= link_to " New Activity", "new" %>
+    </section>
+ </aside>   
+      
+   <div class="col-md-8"> 
+    <%= render "list" %>
+
+  </div>
+          
+
+
+</div>

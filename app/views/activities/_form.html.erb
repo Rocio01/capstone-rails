@@ -8,14 +8,27 @@
       <%= f.number_field :activity_time, class: 'form-control' %>
 
         <div class="form-group">
-            <%= f.label 'Group' %>
-            <select id="expense_group_id" name="activity[group_id]" class="custom-select" id="inputGroupSelect01">
-            <option value='<%= nil%>'>None</option>
+            <%= f.label 'Group' %>         
             <% Group.all.each do |group| %>
-                <option value="<%= group.id %>"><%= group.name %></option>
+           <div class="input-group">
+              <div class="input-group-text">
+                  <%= check_box_tag "activity[group_ids][]", group.id, @activity.group_ids.include?(group.id) %>
+              </div>
+              <div class="input-group-text " >
+                  <%= group.name %>
+              </div>
+        </div>
+       
+             
+     
+          
+        
+      
             <% end %>
             </select>
         </div>
 
       <%= f.submit "Create my Activity", class: "btn btn-primary" %>
     <% end %>
+
+      

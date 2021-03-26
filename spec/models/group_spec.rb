@@ -32,10 +32,6 @@ RSpec.describe Group, type: :model do
   end
 
   describe 'Groups associations' do
-    it 'has many activities' do
-      group = Group.reflect_on_association(:activities)
-      expect(group.macro).to eq(:has_many)
-    end
     it 'belongs to user' do
       group = Group.reflect_on_association(:user)
       expect(group.macro).to eq(:belongs_to)

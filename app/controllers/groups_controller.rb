@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @activities = Activity.all
   end
 
   def index

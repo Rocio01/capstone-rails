@@ -42,9 +42,5 @@ RSpec.describe Activity, type: :model do
       activity = Activity.reflect_on_association(:user)
       expect(activity.macro).to eq(:belongs_to)
     end
-    it 'belongs to group' do
-      activity = Activity.reflect_on_association(:group)
-      expect(activity.macro).to eq(:belongs_to)
-    end
   end
 end

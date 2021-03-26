@@ -4,19 +4,29 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @groups = Group.all
   end
 
-  def show; end
+  def index
+    @activities = Activity.all
+  end
+
+  def show
+    @activity = Activity.find(params[:id])
+  end
 
   def create
     @activity = current_user.activities.build(activity_params)
+    @activity.groups = Group.find(params[:activity][:group_ids]) if params[:activity][:group_ids]
     if @activity.save
-      if @activity.group_id.nil?
-        flash[:success] = 'External Activity created!'
-        redirect_to external_path
-      else
+      if params[:activity][:group_ids]
         flash[:success] = 'Activity created!'
         redirect_to activitiesg_path
+
+      else
+        flash[:success] = 'External Activity created!'
+        redirect_to external_path
+
       end
     else
       render :new
@@ -32,7 +42,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :activity_time, :group_id, :id)
+    params.require(:activity).permit(:name, :activity_time, :id)
   end
 
   def correct_activity

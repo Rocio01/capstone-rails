@@ -6,7 +6,7 @@
             </div>
                 <div class="col-md-4">
                     <div class="card-body">
-                        <p class="card-text"><%= activity.name %>
+                        <p class="card-text"> Name: <%= link_to  "#{activity.name}", activity %>
                         </p>
                         <small class="card-text"> Created at: <%= activity.created_at.strftime("%d-%b-%Y") %></small>
                          <%= link_to "delete", activity, method: :delete, data: { confirm: "Are you sure?"} %> 

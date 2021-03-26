@@ -1,0 +1,18 @@
+<% provide(:title, "Activities") %>
+
+
+<div class="card" style="max-width: 540px;">
+	<div class="row g-0"> 
+		<div >
+			<h1 class="card-text"> Total activities: <%= @activities.count %> </h1>
+       <h2> <%= link_to " New Activity", "activities/new" %> </h2>
+		</div>
+
+	</div>
+</div>
+
+<%= render "list_index" %>
+
+
+
+ 
