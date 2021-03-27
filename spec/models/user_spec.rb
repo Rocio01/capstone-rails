@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'email should not be too long' do
-    user.email = 'a' * 100 + '@gmail.com'
+    user.email = "#{'a' * 100}@gmail.com"
     expect(user).to_not be_valid
   end
 

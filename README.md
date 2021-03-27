@@ -14,8 +14,8 @@ This is an application where you can group your activities and track how many ho
 
 ## Built With
 
-- Ruby v2.6.6
-- Ruby on Rails v6.1.3
+- Ruby 
+- Ruby on Rails 
 
 ## Live Demo
 
