@@ -47,9 +47,12 @@ class UsersController < ApplicationController
   end
 
   def group_activities
+
     user = User.find_by(id: current_user.id)
+    @external_activities = user.activities.includes(:activities_groups).where(activities_groups: { group_id: nil })
     @group_activities = user.activities.includes(:activities_groups).where.not(activities_groups: { group_id: nil })
-    @group_activities_total = @group_activities.sum(:activity_time)
+
+    @activities_total = user.activities.all.sum(:activity_time) - @external_activities.sum(:activity_time) 
   end
 
   private
