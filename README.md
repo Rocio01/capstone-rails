@@ -19,7 +19,7 @@ This is an application where you can group your activities and track how many ho
 
 ## Live Demo
 
-[Live Demo](https://gentle-ocean-23050.herokuapp.com/)
+[Live Demo](https://evening-castle-40558.herokuapp.com/)
 
 ## Demostration
 
