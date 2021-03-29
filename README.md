@@ -21,9 +21,6 @@ This is an application where you can group your activities and track how many ho
 
 [Live Demo](https://evening-castle-40558.herokuapp.com/)
 
-## Demostration
-
-[Video](https://www.loom.com/share/efc112c8dfd34cd8845419e3a5b99e58)
 
 ## Getting Started
 
