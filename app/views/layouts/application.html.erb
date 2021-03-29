@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CapstoneRails</title>
+    <title><%= full_title(yield(:title)) %> </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//db.onlinewebfonts.com/c/72b6f2c9990bd3d37b8013a59ed78902?family=Proxima+Nova" rel="stylesheet" type="text/css"/> 
   </head>
 
-  <body>
-    <%= yield %>
+  <body> 
+     <%= render "layouts/header" %>
+    <div class="container">
+      <%= render "layouts/flash_messages"%>
+      <%= yield %>
+
+    </div>
   </body>
 </html>

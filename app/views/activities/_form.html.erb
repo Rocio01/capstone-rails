@@ -1,0 +1,34 @@
+    <%= form_with(model: @activity, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :activity_time %>
+      <%= f.number_field :activity_time, class: 'form-control' %>
+
+        <div class="form-group">
+            <%= f.label 'Group' %>         
+            <% Group.all.each do |group| %>
+           <div class="input-group">
+              <div class="input-group-text">
+                  <%= check_box_tag "activity[group_ids][]", group.id, @activity.group_ids.include?(group.id) %>
+              </div>
+              <div class="input-group-text " >
+                  <%= group.name %>
+              </div>
+        </div>
+       
+             
+     
+          
+        
+      
+            <% end %>
+            </select>
+        </div>
+
+      <%= f.submit "Create my Activity", class: "btn btn-primary" %>
+    <% end %>
+
+      

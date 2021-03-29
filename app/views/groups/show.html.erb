@@ -1,0 +1,25 @@
+<%  provide(:title, @group.name ) %> 
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <span>
+        <img src="<%= @group.icon%>" class=" icon" alt="icon" >          
+       <h3> <%= @group.name %> </h3>
+       <p> Author: <%= @group.user.name %> </p>
+       <p> Created at: <%= @group.created_at.strftime("%d-%b-%Y") %> </p>
+
+       <%= delete_link(@group) %>
+      </span>
+      <%= link_to " New Group", "new" %>
+    </section>
+ </aside>   
+      
+   <div class="col-md-8"> 
+    <%= render "list" %>
+
+  </div>
+          
+
+
+</div>

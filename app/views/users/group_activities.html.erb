@@ -1,0 +1,22 @@
+<% provide(:title, "Activities") %>
+<div class="card" style="max-width: 540px;">
+	<div class="row g-0"> 
+		<div class="col-md-6">
+			<h2 class="card-text"> TOTAL: </h2>            
+		</div>
+		<div class="col-md-6">
+			<h2 class="card-text"><%= @activities_total%><%= "hour".pluralize(@activities_total) %>. </h2>            
+		</div>
+	</div>
+</div>
+
+<%= render "list_activities"%>
+<div class="card" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class= "center"> 
+            <h2 class= "btn btn-success"> 
+              <%= link_to " New Activity", "activities/new" %> 
+            </h2> 
+         </div>
+    </div>
+</div>

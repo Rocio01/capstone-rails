@@ -1,0 +1,20 @@
+<% provide(:title, @user.name) %>
+
+
+<div class="card user-show" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 ">
+      <%= gravatar_for @user %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+       
+        <h3 class="card-text "><%= @user.name %></h3>
+        <p class="card-text"><%= link_to "Activities", activitiesg_path %></p>
+        <p class="card-text"><%= link_to "External activities", external_path %></p>        
+        <p class="card-text"><%= link_to "Groups", groups_path %></p>       
+      </div>
+    </div>
+  </div>
+</div>
+

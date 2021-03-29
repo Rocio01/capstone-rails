@@ -1,0 +1,25 @@
+<% @external_activities.each do |activity| %>
+    <div class="card" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://cdn.onlinewebfonts.com/svg/img_132703.png" class=" icon" alt="icon" >
+            </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text"> Name: <%= link_to  "#{activity.name}", activity %>
+                        </p>
+                        <small class="card-text"> Created at: <%= activity.created_at.strftime("%d-%b-%Y") %></small>
+                         <%= link_to "delete", activity, method: :delete, data: { confirm: "Are you sure?"} %> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text"><%= activity.activity_time %><%= "Hour".pluralize(activity.activity_time) %>. </p>
+                            
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    <% end %>

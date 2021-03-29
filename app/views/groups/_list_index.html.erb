@@ -1,0 +1,23 @@
+<% @groups.each do |group|%>
+ <div class="card" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                 <img src="<%= group.icon%>" class=" icon" alt="icon" >
+             </div>
+             <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-title"> <%= link_to "#{group.name}", group %></p>
+                        
+                        <small class="card-text"> Created at: <%= group.created_at.strftime("%d-%b-%Y") %></small>
+                        
+                    </div>
+             </div>
+             <div class="col-md-4">
+                    <div class="card-body">
+                      <p class="card-text"><%= link_to "delete", group, method: :delete, data: { confirm: "Are you sure?"} %> </p>
+                        
+                    </div>
+            </div>
+    </div>
+ </div>
+  <% end %>

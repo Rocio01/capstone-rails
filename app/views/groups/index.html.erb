@@ -1,0 +1,17 @@
+<% provide(:title, "Groups") %>
+
+
+<div class="card" style="max-width: 540px;">
+	<div class="row g-0"> 
+		<div >
+			<h1 class="card-text"> Total groups: <%= @groups.count %> </h1>
+       <h2> <%= link_to " New Group", "groups/new" %> </h2>
+		</div>
+
+	</div>
+</div>
+<%= render "list_index" %>
+
+
+
+ 

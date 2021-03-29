@@ -1,0 +1,16 @@
+     <% if @activity.groups.any? %>       
+
+       <h3>  The Activity is in <%= @activity.groups.count%> <%= "Group".pluralize(@activity.groups.count) %> . </h3>
+        <ol class="activities">
+         
+          <% @activity.groups.each do |group| %>
+          <li>        
+            <p class="name"><%= group.name %> </p>
+            <p class="user"> Author: <%= link_to group.user.name, group.user %> </p>
+            <p class="timestamp">
+                Created at: <%= group.created_at.strftime("%d-%b-%Y") %> 
+            </p>
+          </li>
+          <% end %>
+        </ol>
+     <% end %>
